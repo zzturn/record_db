@@ -35,12 +35,11 @@
 ## tool/resource
 [Header Editor - 不死鸟 - 分享为王官网](https://iui.su/1927/)    浏览器扩展 修改请求
 
+[tt](https://google.com)    
+
 ## 科普、指南、评测
 [医生总让人拍片子，但看的到底是啥？](http://mp.weixin.qq.com/s?__biz=MjA1ODMxMDQwMQ==&mid=2657805626&idx=1&sn=db60144f3c01de3ae866ea1c1700b247&chksm=490ee1547e7968420c9acd4796d3e7fbdf8807104e2c070c1fd79317552a19198aad8c74b3d4&mpshare=1&scene=23&srcid=1029bBkivwJCAVpbtYFZWVxR&sharer_sharetime=1675783387981&sharer_shareid=165d672b1d816e8d8948659a2949584f#rd)    x光 ct 磁共振 拍片子 医疗
 
 ## 指南、评测
 [直连、中转、BGP和IPLC国际专线节点是什么意思，有何区别？-『白云居』](https://baiyunju.cc/9413)    机场 iplc
-
-## 未分类
-[test](https://google.com)    
 
