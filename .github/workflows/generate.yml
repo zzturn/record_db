@@ -1,0 +1,61 @@
+name: Generate README and static html
+
+on:
+  workflow_dispatch:
+  issues:
+    types: [opened, edited]
+  push:
+    branches:
+      - master
+    paths:
+      - main.py
+
+env:
+  GITHUB_NAME: yihong0618
+  GITHUB_EMAIL: zouzou0208@gmail.com
+
+jobs:
+  readme:
+    name: Generate README
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.8
+
+      - name: Configure pip cache
+        uses: actions/cache@v1
+        id: pip-cache
+        with:
+          path: venv
+          key: pip-1-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            pip-
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m venv venv
+          source venv/bin/activate
+          pip install -r requirements.txt
+        if: steps.pip-cache.outputs.cache-hit != 'true'
+
+      - name: Generate new md
+        run: |
+          source venv/bin/activate
+          python main.py ${{ secrets.G_T }} ${{ github.repository }}'
+
+      - name: convert md to html
+        uses: docker://pandoc/latex:2.9
+        with:
+          entrypoint: /bin/sh
+          args: -c "pandoc ./README.md -o docs/index.html;"
+
+      - name: Push README
+        run: |
+          git add .
+          git commit -a -m '[auto]update README and static html' || echo "nothing to commit"
+          git push || echo "nothing to push"
