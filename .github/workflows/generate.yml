@@ -43,9 +43,7 @@ jobs:
         if: |
           github.event_name == 'workflow_dispatch' || 
           github.event_name == 'push' || 
-          github.event.issue.user.login == github.repository_owner && 
-          ((github.event_name == 'issues' && github.event.action == 'deleted') || 
-          (github.event.issue.labels && github.event.issue.milestone))
+          github.event.issue.user.login == github.repository_owner
         run: |
           source venv/bin/activate
           python main.py ${{ secrets.G_T }} ${{ github.repository }}
