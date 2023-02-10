@@ -24,6 +24,8 @@
 
 [我的开源 2022，从 0 到 2.7k stars - 掘金](https://juejin.cn/post/7189878373542281274)    开源项目 动态线程池
 
+[广州最酷的互联网公司在找你！](http://mp.weixin.qq.com/s?__biz=Mzg4NjUxMzg5MA==&mid=2247489050&idx=1&sn=38b9e625359c8c29765bf7b6b9b38dbb&chksm=cf99df97f8ee5681c05867067ea86e008de2b5e50dd851633f78a82110366902f657e560c3c4&mpshare=1&scene=23&srcid=0307ZLIhJ1JUywnMzJ3Hw28U&sharer_sharetime=1676054618804&sharer_shareid=165d672b1d816e8d8948659a2949584f#rd)    求职 广州
+
 ## 技术踩坑
 [关于Maven创建module出现Ignored pom.xml文件如何解决_TanaStudy的博客-CSDN博客_ignored pom](https://blog.csdn.net/weixin_43901865/article/details/112596443)    idea maven
 
@@ -38,4 +40,7 @@
 
 ## 指南、评测
 [直连、中转、BGP和IPLC国际专线节点是什么意思，有何区别？-『白云居』](https://baiyunju.cc/9413)    机场 iplc
+
+## 未分类
+[test](https://google.com)    
 
