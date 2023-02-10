@@ -10,10 +10,6 @@ on:
     paths:
       - main.py
 
-env:
-  GITHUB_NAME: yihong0618
-  GITHUB_EMAIL: zouzou0208@gmail.com
-
 jobs:
   readme:
     name: Generate README
@@ -46,7 +42,14 @@ jobs:
       - name: Generate new md
         run: |
           source venv/bin/activate
-          python main.py ${{ secrets.G_T }} ${{ github.repository }}'
+          python main.py ${{ secrets.G_T }} ${{ github.repository }}
+          dir_name="docs"
+          if [ ! -d "$dir_name" ]; then
+            mkdir $dir_name
+            echo "Directory $dir_name created."
+          else
+            echo "Directory $dir_name already exists."
+          fi
 
       - name: convert md to html
         uses: docker://pandoc/latex:2.9
@@ -56,6 +59,8 @@ jobs:
 
       - name: Push README
         run: |
-          git add .
+          git config --local user.email "${{ vars.GIT_EMAIL }}"
+          git config --local user.name "${{ vars.GIT_NAME }}"
+          git add README.md docs/*
           git commit -a -m '[auto]update README and static html' || echo "nothing to commit"
           git push || echo "nothing to push"
