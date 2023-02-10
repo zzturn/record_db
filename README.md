@@ -41,6 +41,3 @@
 ## 指南、评测
 [直连、中转、BGP和IPLC国际专线节点是什么意思，有何区别？-『白云居』](https://baiyunju.cc/9413)    机场 iplc
 
-## 未分类
-[test](https://google.com)    
-

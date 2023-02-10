@@ -47,7 +47,7 @@ def save(repo, m2i: dict):
 def main(token, repo_name):
     user = login(token)
     repo = user.get_repo(repo_name)
-    issues = repo.get_issues()
+    issues = repo.get_issues(creator=user.get_user().login)
     m2i = {}
     for issue in issues:
         milestone = issue.milestone
