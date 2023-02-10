@@ -40,8 +40,10 @@ jobs:
         if: steps.pip-cache.outputs.cache-hit != 'true'
 
       - name: Generate new md
-        if: ${{github.event.issue.labels.*.name}} && ${{github.event.issue.milestone}}
+        if: ${{github.event.issue.labels}} && ${{github.event.issue.milestone}}
         run: |
+          echo ${{github.event.issue.labels}}
+          echo ${{github.event.issue.milestone}}
           source venv/bin/activate
           python main.py ${{ secrets.G_T }} ${{ github.repository }}
           dir_name="docs"
