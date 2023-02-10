@@ -1,3 +1,5 @@
+import sys
+
 from github import Github, Milestone, Issue
 import argparse
 import os
@@ -15,15 +17,13 @@ def get_repo(user: Github, repo: str):
 
 
 def get_milestone_number(milestone: Milestone):
+    if milestone is None:
+        return sys.maxsize
     return milestone.number
 
 
 def get_issue_number(issue: Issue):
     return issue.number
-
-
-def get_label_name(label):
-    return label.name
 
 
 def save(repo, m2i: dict):
@@ -32,7 +32,11 @@ def save(repo, m2i: dict):
         milestone_list = list(m2i.keys())
         milestone_list.sort(key=get_milestone_number)
         for milestone in milestone_list:
-            f.writelines('## ' + milestone.title + '\n')
+            if milestone is None:
+                title = "未分类"
+            else:
+                title = milestone.title
+            f.writelines('## ' + title + '\n')
             m2i.get(milestone).sort(key=get_issue_number)
             for issue in m2i.get(milestone):
                 labels = issue.get_labels()
