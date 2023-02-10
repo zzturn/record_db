@@ -3,7 +3,7 @@ name: Generate README and static html
 on:
   workflow_dispatch:
   issues:
-    types: [opened, edited]
+    types: [opened, edited, deleted]
   push:
     branches:
       - master
