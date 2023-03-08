@@ -4,7 +4,7 @@ from github import Github, Milestone, Issue
 import argparse
 import os
 
-FILENAME = "README.md"
+FILENAME = "record.md"
 ANCHOR_NUMBER = 5
 
 

@@ -1,4 +1,4 @@
-name: Generate README and static html
+name: Generate markdown and static html
 
 on:
   workflow_dispatch:
@@ -12,7 +12,7 @@ on:
 
 jobs:
   readme:
-    name: Generate README
+    name: Generate markdown
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -59,12 +59,12 @@ jobs:
         uses: docker://pandoc/latex:2.9
         with:
           entrypoint: /bin/sh
-          args: -c "pandoc ./README.md -o docs/index.html;"
+          args: -c "pandoc ./record.md -o docs/index.html;"
 
-      - name: Push README
+      - name: Push doc
         run: |
           git config --local user.email "${{ vars.GIT_EMAIL }}"
           git config --local user.name "${{ vars.GIT_NAME }}"
-          git add README.md docs/*
-          git commit -a -m '[auto]update README and static html' || echo "nothing to commit"
+          git add record.md docs/*
+          git commit -a -m '[auto]update record and static html' || echo "nothing to commit"
           git push || echo "nothing to push"
