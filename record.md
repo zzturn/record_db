@@ -19,6 +19,8 @@
 
 [SpringBoot 如何保证接口安全？老鸟们都是这么玩的！ - 掘金](https://juejin.cn/post/7195355046065176631)    java 接口安全
 
+[如何理解BIO、NIO、AIO的区别？ - 掘金](https://juejin.cn/post/6844903985158045703)    io
+
 ## 技术杂谈
 [程序员副业接单做私活避坑指南 - 掘金](https://juejin.cn/post/7195085041456644154)    程序员接单
 
